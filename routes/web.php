@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BackupController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/backup', [BackupController::class, 'index'])->name('backup.index');
+Route::post('/backup/create', [BackupController::class, 'create'])->name('backup.create');
